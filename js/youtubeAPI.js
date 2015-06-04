@@ -1,12 +1,13 @@
 $(document).ready(function(){
 	
 	$("#searchButton").click(function(){
+		$("#youtube_results").empty();
 		var search_tags = document.getElementById("searchTerm").value;
 			$.getJSON(" https://www.googleapis.com/youtube/v3/search",
 			{
 				part: "snippet",
 				type: "video",
-				maxResults: 12,
+				maxResults: 9,
 				q:encodeURIComponent(search_tags).replace(/%20/g, "+"),
 				order: "viewCount",
 				key: "AIzaSyAqFLcupX93Q2GdCtlNjvbDDf80K4vg18E",
