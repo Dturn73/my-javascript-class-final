@@ -15,11 +15,7 @@ $(document).ready(function(){
 			},function(data){
 				console.log(data);
 				$.each(data.items, function(i,object){
-					//$("#youtube_results").append(object.id.videoId + " " + object.snippet.title);
-					$('<iframe>', {
-					   src: "www.youtube.com/" + object.id.videoId,
-					   frameborder: 0,
-					   scrolling: 'no'
+					  output =  '<li><iframe src=\"//www.youtube.com/embed/'+object.id.videoId'\"></iframe></li>';
 					}).appendTo("#youtube_results");
 				});
 		});
