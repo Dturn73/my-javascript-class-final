@@ -13,11 +13,12 @@ $(document).ready(function(){
 				restriction: "US",
 				nojsoncallback: 1
 			},function(data){
-				console.log(data);
 				$.each(data.items, function(i,object){
-					  output =  '<li><iframe src=\"//www.youtube.com/embed/'+object.id.videoId'\"></iframe></li>';
-					}).appendTo("#youtube_results");
+					$("<iframe>").attr("src", "//www.youtube.com/embed/" + object.id.videoId)
+					.appendTo("#youtube_results");
 				});
 		});
 	});
 });
+/*https://farm" + photo.farm + ".staticflickr.com/" 
+						+ photo.server + "/" + photo.id + "_" + photo.secret + "_s.jpg*/
