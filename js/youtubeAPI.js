@@ -13,7 +13,7 @@ $(document).ready(function(){
 				restriction: "US",
 				nojsoncallback: 1
 			},function(data){
-				$.each(data.items, function(i,object){
+				$.each(data.items, function(i, object){
 					$("<iframe>").attr("src", "//www.youtube.com/embed/" + object.id.videoId)
 					.appendTo("#youtube_results");
 				});
