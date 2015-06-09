@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//alert("Enter a search term in the box\nand click the search button.\nThis will get information\nfrom Flickr, FaceBook, and YouTube\nmatching your search criteria.\nTry Cute Kittens!!!");
+	alert("Enter a search term in the box\nand click the search button.\nThis will get information\nfrom Flickr, FaceBook, and YouTube\nmatching your search criteria.\nTry Cute Kittens!!!");
 	$("#searchButton").click(function(){
 		$("#images").empty();
 		var search_tags = document.getElementById("searchTerm").value;
