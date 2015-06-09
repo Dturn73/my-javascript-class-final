@@ -32,7 +32,7 @@ The padding is very important to make sure the scrollspy picks up the right area
 of those sections to manage the look and feel of the site. */
 img {
     padding: 2px;
-    border: 1px solid;
+    border: 3px solid;
     border-color: orange;
 }
 .logos {
@@ -64,16 +64,9 @@ img {
     background: #eee;
 }
 
-.facebook-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-}
-
 .youtube-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #eee;
+    background: #fff;
 }

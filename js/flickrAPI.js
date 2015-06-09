@@ -1,9 +1,8 @@
 $(document).ready(function(){
-	alert("Enter a search term in the box\nand click the search button.\nThis will get information\nfrom Flickr, FaceBook, and YouTube\nmatching your search criteria.\nTry Cute Kittens!!!");
+	//alert("Enter a search term in the box\nand click the search button.\nThis will get information\nfrom Flickr, FaceBook, and YouTube\nmatching your search criteria.\nTry Cute Kittens!!!");
 	$("#searchButton").click(function(){
 		$("#images").empty();
 		var search_tags = document.getElementById("searchTerm").value;
-		console.log(search_tags);
 		$.getJSON("https://api.flickr.com/services/rest",
 			{
 				method: "flickr.photos.search",
@@ -17,20 +16,32 @@ $(document).ready(function(){
 				$.each(data.photos.photo, function(i,photo){
 					$("<img/>").attr("src", "https://farm" + photo.farm + ".staticflickr.com/" 
 						+ photo.server + "/" + photo.id + "_" + photo.secret + "_s.jpg")
-					.addClass("img-rounded")
+					.addClass("img-rounded clickable")
 					.appendTo("#images");
 					if(i==69) return false;
+					$(".clickable").on({
+						//sets css properties for the current img being moused over
+						mouseover: function(){
+							$(this).css({
+								'cursor': 'pointer',
+								'border-color': 'white'
+							});
+						},
+						//function undoes the css above on mouse out
+						mouseout: function(){
+							$(this).css({
+								'cursor': 'default',
+								'border-color': 'orange'
+							});
+						},
+						click: function(){
+							this.src = "https://farm" + photo.farm + ".staticflickr.com/" 
+						+ photo.server + "/" + photo.id + "_" + photo.secret + "_b.jpg"
+							window.open(this.src,"_top")
+						}
+
+					});
 				});
 		});
 	});
 });
-
-/*$.getJSON("https://api.flickr.com/services/rest?/", {
-			method: "flickr.photos.search",
-			api_key:"247bf29fe02247d6925913da59c2bd04",
-			tags:"cat",
-			format: "json"
-		},function(data){
-			console.log("hello world");
-			console.log(data);
-		});*/
