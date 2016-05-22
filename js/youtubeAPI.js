@@ -14,7 +14,7 @@ $(document).ready(function(){
 				nojsoncallback: 1,
 			},function(data){
 				$.each(data.items, function(i, object){
-					$("<iframe>").attr({"src": "www.youtube.com/embed/" + object.id.videoId, "allowfullscreen"})
+					$("<iframe>").attr({src: "www.youtube.com/embed/" + object.id.videoId, allowfullscreen: "allowfullscreen"})
 					.appendTo("#youtube_results")
 				});
 		});
