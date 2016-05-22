@@ -14,16 +14,9 @@ $(document).ready(function(){
 				nojsoncallback: 1,
 			},function(data){
 				$.each(data.items, function(i, object){
-					$("<iframe>").attr("src", "//www.youtube.com/embed/" + object.id.videoId)
-					.appendTo("#youtube_results");
+					$("<iframe>").attr({src: "www.youtube.com/embed/" + object.id.videoId, allowfullscreen:"allowfullscreen"})
+					.appendTo("#youtube_results")
 				});
 		});
 	});
-	$(".ytp-fullscreen-button").on('click', playFullScreen);
-
-	function playFullScreen(){
-		var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
-  			if (requestFullScreen) {
-   			requestFullScreen.bind(iframe)();
-	}
 });
