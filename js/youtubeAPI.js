@@ -19,4 +19,11 @@ $(document).ready(function(){
 				});
 		});
 	});
+	$(".ytp-fullscreen-button").click(function(){
+
+		width: $(window).width();
+		height: $(window).height();
+
+	});
+
 });
