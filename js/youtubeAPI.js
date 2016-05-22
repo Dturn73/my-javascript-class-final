@@ -19,11 +19,11 @@ $(document).ready(function(){
 				});
 		});
 	});
-	$(".ytp-fullscreen-button").click(function(){
+	$(".ytp-fullscreen-button").on('click', playFullScreen);
 
-		width: $(window).width();
-		height: $(window).height();
-
-	});
-
+	function playFullScreen(){
+		var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
+  			if (requestFullScreen) {
+   			requestFullScreen.bind(iframe)();
+	}
 });
